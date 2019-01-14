@@ -32,6 +32,14 @@ public class PictureTester
     beach.negate();
     beach.explore();
   }
+  public static void testGrayscale()
+  {
+    Picture beach = new Picture("beach.jpg");
+    beach.explore();
+    beach.grayScale();
+    beach.explore();
+  }
+
 
   
   /** Method to test mirrorVertical */
@@ -79,8 +87,8 @@ public class PictureTester
     //testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
-    testNegate();
-    //testGrayscale();
+    //testNegate();
+    testGrayscale();
     //testFixUnderwater();
     //testMirrorVertical();
     //testMirrorTemple();
