@@ -145,7 +145,9 @@ public class Picture extends SimplePicture
       for (Pixel pixelObj : rowArray)
       {
        if(pixelObj.getRed()<=26 && pixelObj.getBlue() > 153){
-         pixelObj.setBlue(pixelObj.getBlue() + 50);
+         pixelObj.setBlue(pixelObj.getBlue() + 30);
+         pixelObj.setGreen(pixelObj.getGreen() + 30);
+         pixelObj.setRed(pixelObj.getRed() + 30);
        }
       }
     }
@@ -169,16 +171,17 @@ public class Picture extends SimplePicture
   public void mirrorHorizontal()
   {
     Pixel[][] pixels = this.getPixels2D();
-    Pixel leftPixel = null;
-    Pixel rightPixel = null;
+    Pixel topPixel = null;
+    Pixel bottomPixel = null;
     int width = pixels[0].length;
-    for (int row = 0; row < pixels.length; row++)
+    System.out.println(pixels.length);
+    for (int col = 0; col < width; col++)
     {
-      for (int col = 0; col < width / 2; col++)
+      for (int row = 0; row < pixels.length / 2; row++)
       {
-        leftPixel = pixels[row][col];
-        rightPixel = pixels[row][width - 1 - col];
-        rightPixel.setColor(leftPixel.getColor());
+        topPixel = pixels[row][col];
+        bottomPixel = pixels[pixels.length - 1 - row][col];
+        bottomPixel.setColor(topPixel.getColor());
       }
     }
   }
