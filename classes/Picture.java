@@ -431,18 +431,16 @@ public class Picture extends SimplePicture
       }
     }
     for(int col = 0;
-       col < pixels[0].length-1; col++)
+       col < pixels[0].length; col++)
     {
-      for(int row = 0; row < pixels.length; row++)
+      for(int row = 0; row < pixels.length-1; row++)
       {
         leftPixel = pixels[row][col];
-        rightPixel = pixels[row][col+1];
+        rightPixel = pixels[row+1][col];
         rightColor = rightPixel.getColor();
         if (leftPixel.colorDistance(rightColor) >
                 edgeDist)
           leftPixel.setColor(Color.BLACK);
-        else
-          leftPixel.setColor(Color.WHITE);
       }
     }
   }
