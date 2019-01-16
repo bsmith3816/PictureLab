@@ -109,6 +109,22 @@ public class PictureTester
     temple.explore();
   }
 
+  public static void testMirrorGull()
+  {
+    Picture seagull = new Picture("seagull.jpg");
+    seagull.explore();
+    seagull.mirrorGull();
+    seagull.explore();
+  }
+  /** Method to test the collage method */
+  public static void testCopy()
+  {
+    Picture seagull = new Picture("seagull.jpg");
+    seagull.explore();
+    seagull.copy(seagull, 230,330,225,350);
+    seagull.explore();
+  }
+
 
   /** Method to test the collage method */
   public static void testCollage()
@@ -145,12 +161,12 @@ public class PictureTester
     //testMirrorHorizontalBotToTop();
     //testMirrorDiagonal();
     //testMirrorTemple();
-    testMirrorArms();
+    //testMirrorArms();
     //testMirrorGull();
     //testMirrorDiagonal();
     //testCollage();
     //testCopy();
-    //testEdgeDetection();
+    testEdgeDetection();
     //testEdgeDetection2();
     //testChromakey();
     //testEncodeAndDecode();
